@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>92 Golf Kitchen & Canteen | Lake Worth, FL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --olive:    #4a5c3a;
+      --dark:     #1e2a18;
+      --cream:    #f5f0e8;
+      --tan:      #d9c99b;
+      --rust:     #b34a2a;
+      --gold:     #c9902e;
+      --white:    #ffffff;
+      --text:     #2c2c2c;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(30, 42, 24, 0.96);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--tan);
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(20,30,14,0.72) 0%, rgba(20,30,14,0.55) 60%, rgba(20,30,14,0.85) 100%),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--rust);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--tan);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      color: rgba(245,240,232,0.85);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 34px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: all 0.22s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+      border: 2px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .hero-hours {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--tan);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .dot { width: 8px; height: 8px; background: #5dba4a; border-radius: 50%; flex-shrink: 0; }
+
+    /* ===== SECTION WRAPPER ===== */
+    section { padding: 90px 24px; }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      margin-bottom: 36px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-section { background: var(--dark); }
+
+    .about-section .section-title { color: var(--cream); }
+    .about-section .section-label { color: var(--gold); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: rgba(245,240,232,0.8);
+      line-height: 1.8;
+      font-size: 0.97rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card .lbl {
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.6);
+    }
+
+    /* ===== MENU ===== */
+    .menu-section { background: var(--cream); }
+
+    .menu-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .tab-btn {
+      padding: 10px 24px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 2px solid var(--olive);
+      background: transparent;
+      color: var(--olive);
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--olive);
+      color: var(--white);
+    }
+
+    .menu-panel { display: none; }
+    .menu-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+    .menu-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 24px 22px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .menu-card-info h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .menu-card-info p {
+      font-size: 0.83rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .menu-card-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--rust);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-note {
+      margin-top: 28px;
+      font-size: 0.82rem;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section { background: var(--olive); }
+    .features-section .section-title { color: var(--white); }
+    .features-section .section-label { color: var(--tan); }
+    .features-section .divider { background: var(--tan); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 10px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* ===== VISIT ===== */
+    .visit-section { background: var(--cream); }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .hours-table { width: 100%; border-collapse: collapse; }
+
+    .hours-table tr { border-bottom: 1px solid rgba(0,0,0,0.08); }
+
+    .hours-table tr:last-child { border-bottom: none; }
+
+    .hours-table td {
+      padding: 12px 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .hours-table td:first-child { font-weight: 600; }
+    .hours-table td:last-child { text-align: right; color: var(--olive); }
+
+    .today-highlight td { color: var(--rust) !important; font-weight: 700 !important; }
+
+    .contact-block { margin-top: 36px; }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--olive);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item h5 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    .contact-item p, .contact-item a {
+      font-size: 0.95rem;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .contact-item a:hover { color: var(--rust); }
+
+    .map-embed {
+      width: 100%;
+      height: 320px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border: none;
+    }
+
+    /* ===== REVIEWS ===== */
+    .reviews-section { background: #f0ebe0; padding: 90px 24px; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 26px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 14px; }
+
+    .review-card blockquote {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .reviewer {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+    }
+
+    .reviewer span {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.78rem;
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      padding: 50px 24px 30px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--tan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.83rem;
+      color: rgba(245,240,232,0.5);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .footer-links a {
+      color: rgba(245,240,232,0.55);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(245,240,232,0.3);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .about-grid, .visit-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">92 <span>Golf</span> Kitchen</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#features">Info</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">⭐ Veteran Owned &amp; Operated</div>
+  <h1>92 Golf<br><span>Kitchen</span> &amp; Canteen</h1>
+  <p class="hero-sub">Lake Worth, Florida</p>
+  <p class="hero-desc">
+    Fresh comfort food served with patriotic pride. Breakfast, lunch, and dinner — made with love by Nick &amp; Dianne for the Greenacres community.
+  </p>
+  <div class="hero-btns">
+    <a href="#menu" class="btn btn-primary">View Menu</a>
+    <a href="#visit" class="btn btn-outline">Find Us</a>
+  </div>
+  <div class="hero-hours">
+    <span class="dot"></span>
+    <span>Open Every Day &nbsp;·&nbsp; 8:00 AM – 8:00 PM</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">Community, Country<br>&amp; Good Food</h2>
+    <div class="divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          92 Golf Kitchen &amp; Canteen is a veteran-owned and operated food truck proudly serving the Lake Worth and Greenacres community. Founded by Nick &amp; Dianne, the canteen was built on a simple idea: exceptional food, fair prices, and a genuine love for the people they serve.
+        </p>
+        <p>
+          You'll find us parked near Copper Point Brewery and right at home at 6830 Long Key Street. Whether you're grabbing a hearty breakfast before a round of golf, a quick lunch, or a satisfying dinner, we bring the same patriotic spirit and hospitality to every plate.
+        </p>
+        <p>
+          We use fresh, locally sourced ingredients because your community deserves nothing less. Welcome to the canteen — pull up a chair, dogs welcome.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="num">7</div>
+          <div class="lbl">Days a Week</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">$$</div>
+          <div class="lbl">Fair Prices</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">3</div>
+          <div class="lbl">Meals a Day</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">🇺🇸</div>
+          <div class="lbl">Veteran Owned</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-inner">
+    <p class="section-label">What We Serve</p>
+    <h2 class="section-title">The Menu</h2>
+    <div class="divider"></div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="showTab('breakfast', this)">Breakfast</button>
+      <button class="tab-btn" onclick="showTab('lunch', this)">Lunch</button>
+      <button class="tab-btn" onclick="showTab('dinner', this)">Dinner</button>
+      <button class="tab-btn" onclick="showTab('extras', this)">Sides &amp; More</button>
+    </div>
+
+    <!-- BREAKFAST -->
+    <div id="breakfast" class="menu-panel active">
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Breakfast Sandwich</h4>
+          <p>Egg, cheese &amp; your choice of bacon, sausage, or ham on a toasted roll</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Breakfast Plate</h4>
+          <p>Two eggs any style, home fries, toast, and your choice of protein</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Biscuits &amp; Gravy</h4>
+          <p>Warm buttermilk biscuits smothered in hearty sausage gravy</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Breakfast Burrito</h4>
+          <p>Scrambled eggs, cheddar, peppers, onions &amp; salsa wrapped in a flour tortilla</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Pancake Stack</h4>
+          <p>Three fluffy golden pancakes served with butter and maple syrup</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Brunch Special</h4>
+          <p>Chef's rotating brunch creation — ask us what's on today!</p>
+        </div>
+        <span class="menu-card-price">Ask us!</span>
+      </div>
+    </div>
+
+    <!-- LUNCH -->
+    <div id="lunch" class="menu-panel">
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Classic Burger</h4>
+          <p>Half-pound beef patty, lettuce, tomato, onion &amp; pickles on a brioche bun</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Pulled Pork Sandwich</h4>
+          <p>Slow-smoked pulled pork with house BBQ sauce and coleslaw</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Canteen Dog</h4>
+          <p>All-beef hot dog on a toasted bun with your choice of toppings</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Grilled Chicken Wrap</h4>
+          <p>Marinated chicken, mixed greens, tomato, cheddar &amp; ranch in a flour tortilla</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Club Sandwich</h4>
+          <p>Turkey, ham, bacon, lettuce, tomato &amp; mayo on toasted white bread</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Philly Cheesesteak</h4>
+          <p>Shaved beef, peppers, onions &amp; provolone on a hoagie roll</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+    </div>
+
+    <!-- DINNER -->
+    <div id="dinner" class="menu-panel">
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Comfort Plate</h4>
+          <p>Rotating daily special — hearty American comfort food done right</p>
+        </div>
+        <span class="menu-card-price">Ask us!</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Fried Chicken Dinner</h4>
+          <p>Crispy hand-breaded chicken with two sides of your choice</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>BBQ Ribs</h4>
+          <p>Slow-cooked pork ribs glazed with house BBQ — fall-off-the-bone tender</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Loaded Nachos</h4>
+          <p>Tortilla chips piled with beef, cheese, jalapeños, sour cream &amp; guac</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Hot Wings</h4>
+          <p>Crispy chicken wings tossed in buffalo, BBQ, or honey garlic sauce</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Late Night Bites</h4>
+          <p>Quick small plates &amp; snacks served through closing — perfect after 6 PM</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+    </div>
+
+    <!-- EXTRAS -->
+    <div id="extras" class="menu-panel">
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Seasoned Fries</h4>
+          <p>Golden crispy fries with house seasoning blend</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Onion Rings</h4>
+          <p>Thick-cut, beer-battered onion rings with dipping sauce</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Coleslaw</h4>
+          <p>Creamy house-made coleslaw — great as a side or topping</p>
+        </div>
+        <span class="menu-card-price">Market</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Kids' Menu</h4>
+          <p>Smaller portions of canteen favorites — ask for today's kids' options</p>
+        </div>
+        <span class="menu-card-price">Ask us!</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Dessert of the Day</h4>
+          <p>Rotating house-made desserts — ask what's sweet today</p>
+        </div>
+        <span class="menu-card-price">Ask us!</span>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-info">
+          <h4>Catering</h4>
+          <p>We cater events large &amp; small — call us to discuss your next gathering</p>
+        </div>
+        <span class="menu-card-price">Call Us</span>
+      </div>
+    </div>
+
+    <p class="menu-note">* Menu items and prices may vary. Please call or visit us for the most current menu. We use fresh, locally sourced ingredients.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <p class="section-label">Why We're Different</p>
+    <h2 class="section-title">Good Food,<br>Good People</h2>
+    <div class="divider"></div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🪖</div>
+        <h4>Veteran Owned</h4>
+        <p>Proudly veteran-owned and operated — we serve our community with the same dedication we served our country.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🥩</div>
+        <h4>Fresh Ingredients</h4>
+        <p>Locally sourced, fresh ingredients in every dish — because quality matters in every bite.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚗</div>
+        <h4>Takeout &amp; Curbside</h4>
+        <p>Curbside pickup, drive-through, and takeout options available for your convenience.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h4>Outdoor Seating</h4>
+        <p>Relax outside with casual outdoor seating — and yes, your four-legged friends are welcome!</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">♿</div>
+        <h4>Fully Accessible</h4>
+        <p>Wheelchair accessible entrance, parking, and restrooms — everyone is welcome at our canteen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎉</div>
+        <h4>Catering Available</h4>
+        <p>Let us bring the canteen to your next event. Call us to discuss a custom catering package.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit-section" id="visit">
+  <div class="section-inner">
+    <p class="section-label">Come See Us</p>
+    <h2 class="section-title">Hours &amp; Location</h2>
+    <div class="divider"></div>
+
+    <div class="visit-grid">
+      <div>
+        <table class="hours-table">
+          <tr><td>Monday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Tuesday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Wednesday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Thursday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Friday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Saturday</td><td>8:00 AM – 8:00 PM</td></tr>
+          <tr><td>Sunday</td><td>8:00 AM – 8:00 PM</td></tr>
+        </table>
+
+        <div class="contact-block">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h5>Address</h5>
+              <p>6830 Long Key St<br>Lake Worth / Greenacres, FL 33467</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h5>Phone</h5>
+              <a href="tel:7632344841">(763) 234-4841</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🅿️</div>
+            <div>
+              <h5>Parking</h5>
+              <p>Free parking lot &amp; free street parking available</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💳</div>
+            <div>
+              <h5>Payments Accepted</h5>
+              <p>Credit cards &amp; debit cards welcome</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1234!2d-80.15304!3d26.56883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e4e8b0f9a0d1%3A0x0!2s6830+Long+Key+St%2C+Lake+Worth%2C+FL+33467!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="92 Golf Kitchen and Canteen Map">
+        </iframe>
+
+        <div style="margin-top: 24px; background: var(--olive); color: white; padding: 20px 24px; border-radius: 10px;">
+          <p style="font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 1px; margin-bottom: 8px;">📍 Also Near Copper Point Brewery</p>
+          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.6;">Check our Instagram <strong>@92golfkitchen</strong> for daily location updates and specials!</p>
+          <a href="https://www.instagram.com/92golfkitchen/" target="_blank" style="display:inline-block; margin-top:14px; background: var(--gold); color: var(--dark); font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 22px; border-radius: 3px; text-decoration: none;">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-inner">
+    <p class="section-label">What Guests Are Saying</p>
+    <h2 class="section-title">Community Love</h2>
+    <div class="divider"></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Nick and Dianne offer exceptional food and patriotic spirit — a community must-visit."</blockquote>
+        <div class="reviewer">Dardo G. <span>· February 2026</span></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Delicious food with excellent service — truly outstanding hospitality!"</blockquote>
+        <div class="reviewer">Idalynn J. <span>· March 2025</span></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Delicious dishes and exceptional service made for a wonderful experience."</blockquote>
+        <div class="reviewer">Sara K. <span>· March 2025</span></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Kind staff and delicious food. Thank you so much!"</blockquote>
+        <div class="reviewer">Bonni C. <span>· October 2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">92 <span>Golf</span> Kitchen &amp; Canteen</div>
+  <p class="footer-tagline">Veteran Owned · Lake Worth, FL · Open 7 Days</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#features">Info</a>
+    <a href="#visit">Visit</a>
+    <a href="#reviews">Reviews</a>
+    <a href="tel:7632344841">Call Us</a>
+  </div>
+  <p class="footer-copy">© 2026 92 Golf Kitchen &amp; Canteen · 6830 Long Key St, Lake Worth, FL 33467 · (763) 234-4841</p>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Highlight today in hours table
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hours-table tr').forEach(row => {
+    if (row.cells[0] && row.cells[0].textContent.trim() === today) {
+      row.classList.add('today-highlight');
+    }
+  });
+</script>
+
+</body>
+</html>
